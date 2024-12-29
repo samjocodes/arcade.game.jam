@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dxhab45u82v5x"]
+[gd_scene load_steps=3 format=3 uid="uid://dxhab45u82v5x"]
+
+[ext_resource type="Script" path="res://Scripts/victory.gd" id="1_kxmc4"]
+[ext_resource type="FontFile" uid="uid://cb1djgy63nbtx" path="res://assets/VantageRegular-L3xY5.ttf" id="2_anvnt"]
 
 [node name="Victory" type="CanvasLayer"]
+script = ExtResource("1_kxmc4")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -29,18 +33,21 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_anvnt")
 theme_override_font_sizes/font_size = 64
 text = "Victory"
 
-[node name="RetryButton" type="Button" parent="VBoxContainer"]
+[node name="Lvlbuttton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Retry"
+theme_override_fonts/font = ExtResource("2_anvnt")
+text = "Next Level"
 
 [node name="Menubutton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_anvnt")
 text = "Main Menu"
 
-[connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Lvlbuttton" to="." method="_on_lvlbuttton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Lvlbuttton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menubutton" to="." method="_on_menubutton_pressed"]

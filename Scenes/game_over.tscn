@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://dybxf6cvhen1l"]
+[gd_scene load_steps=3 format=3 uid="uid://dybxf6cvhen1l"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_nlpmc"]
+[ext_resource type="FontFile" uid="uid://cb1djgy63nbtx" path="res://assets/VantageRegular-L3xY5.ttf" id="2_wsbyu"]
 
 [node name="GameOver" type="CanvasLayer"]
+script = ExtResource("1_nlpmc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -29,16 +33,19 @@ theme_override_constants/separation = 10
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_wsbyu")
 theme_override_font_sizes/font_size = 64
 text = "Game Over"
 
 [node name="RetryButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wsbyu")
 text = "Retry"
 
 [node name="Menubutton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_wsbyu")
 text = "Main Menu"
 
 [connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_button_pressed"]
