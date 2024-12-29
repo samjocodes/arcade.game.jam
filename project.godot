@@ -14,6 +14,10 @@ config/name="arcade.game.jam"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+level1="*res://Scripts/level_1.gd"
+
 [display]
 
 window/size/viewport_width=1024

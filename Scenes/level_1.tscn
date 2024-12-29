@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://led1w32o0vky"]
+[gd_scene load_steps=30 format=4 uid="uid://led1w32o0vky"]
 
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_yuofe"]
 [ext_resource type="Texture2D" uid="uid://2p7lndt7x0bs" path="res://assets/Legacy Collection/Assets/Environments/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" id="2_67at3"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://c6x17wx2ujlpi" path="res://assets/Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/clouds.png" id="5_irnww"]
 [ext_resource type="Texture2D" uid="uid://budtay4ln6v6n" path="res://assets/Legacy Collection/Assets/Environments/Gothic-Horror-Files/PNG/layers/town.png" id="6_dtgyc"]
 [ext_resource type="PackedScene" uid="uid://cd318yxl4qg80" path="res://Scenes/player.tscn" id="7_jixpy"]
+[ext_resource type="PackedScene" uid="uid://cksawgp73r1ee" path="res://Scenes/apple.tscn" id="8_ijvos"]
+[ext_resource type="PackedScene" uid="uid://dybxf6cvhen1l" path="res://Scenes/game_over.tscn" id="9_mtmn7"]
+[ext_resource type="PackedScene" uid="uid://dxhab45u82v5x" path="res://Scenes/Victory.tscn" id="10_oghph"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u8vv"]
 texture = ExtResource("2_67at3")
@@ -3146,3 +3149,42 @@ tile_set = SubResource("TileSet_6kbws")
 
 [node name="Player" parent="." instance=ExtResource("7_jixpy")]
 position = Vector2(42, 278)
+
+[node name="apples" type="Node2D" parent="."]
+
+[node name="apple" parent="apples" instance=ExtResource("8_ijvos")]
+position = Vector2(50, 128)
+
+[node name="apple2" parent="apples" instance=ExtResource("8_ijvos")]
+position = Vector2(321, 142)
+
+[node name="apple3" parent="apples" instance=ExtResource("8_ijvos")]
+position = Vector2(825, 95)
+
+[node name="apple4" parent="apples" instance=ExtResource("8_ijvos")]
+position = Vector2(984, 127)
+
+[node name="apple5" parent="apples" instance=ExtResource("8_ijvos")]
+position = Vector2(640, 141)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Score" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -46.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 32
+metadata/_edit_use_anchors_ = true
+
+[node name="GameOver" parent="." instance=ExtResource("9_mtmn7")]
+visible = false
+
+[node name="Victory" parent="." instance=ExtResource("10_oghph")]
+visible = false
