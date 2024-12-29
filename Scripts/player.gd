@@ -39,3 +39,9 @@ func player_movement(delta):
 
 	# Move the character
 	move_and_slide()
+
+func pause():
+	process_mode = PROCESS_MODE_DISABLED
+
+func play():
+	process_mode = PROCESS_MODE_INHERIT

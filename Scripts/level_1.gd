@@ -6,6 +6,7 @@ extends Node2D
 @onready var player = $Player
 @onready var victory = $Victory
 @onready var scoreLabel = $UI/Score
+@onready var game_over = $GameOver
 
 var time = "future"
 
@@ -16,7 +17,7 @@ func _process(delta: float) -> void:
 	elif Input.is_action_pressed("time_shift") && time == "future":
 		go_past()
 
-	scoreLabel.text = "Score " + str(score)
+	scoreLabel.text = "🍎 " + str(score)
 
 func go_past():
 	past.position.x = 0
@@ -37,9 +38,10 @@ func go_future():
 func _score():
 	score += 1
 	print(score)
-	$Coin.play()
 	if score == 5:
 		print("Victory")
-		$Win.play()
 		victory.show()
 		player.pause()
+
+func _on_death_zone_deathzone() -> void:
+	game_over.show()

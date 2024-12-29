@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://led1w32o0vky"]
+[gd_scene load_steps=30 format=4 uid="uid://led1w32o0vky"]
 
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_yuofe"]
 [ext_resource type="Texture2D" uid="uid://2p7lndt7x0bs" path="res://assets/Legacy Collection/Assets/Environments/Gothic-Castle-Files/PNG/layers/gothic-castle-tileset.png" id="2_67at3"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cksawgp73r1ee" path="res://Scenes/apple.tscn" id="8_ijvos"]
 [ext_resource type="PackedScene" uid="uid://dybxf6cvhen1l" path="res://Scenes/game_over.tscn" id="9_mtmn7"]
 [ext_resource type="PackedScene" uid="uid://dxhab45u82v5x" path="res://Scenes/Victory.tscn" id="10_oghph"]
-[ext_resource type="PackedScene" uid="uid://ldqlxail7iqf" path="res://Scenes/death_zone.tscn" id="11_ds62h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7u8vv"]
 texture = ExtResource("2_67at3")
@@ -3112,7 +3111,7 @@ texture = ExtResource("4_adosq")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_m2nxd")
 
-[node name="level" type="Node2D"]
+[node name="level1" type="Node2D"]
 script = ExtResource("1_yuofe")
 
 [node name="past" type="Node2D" parent="."]
@@ -3189,8 +3188,3 @@ visible = false
 
 [node name="Victory" parent="." instance=ExtResource("10_oghph")]
 visible = false
-
-[node name="death zone" parent="." instance=ExtResource("11_ds62h")]
-position = Vector2(11, 426)
-
-[connection signal="deathzone" from="death zone" to="." method="_on_death_zone_deathzone"]

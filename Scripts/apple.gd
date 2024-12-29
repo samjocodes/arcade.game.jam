@@ -1,8 +1,10 @@
 extends Area2D
 
+var level
+
 func _ready():
-	pass
+	level = get_node("/root/level")
 
 func _on_body_entered(body):
 	queue_free()
-	level1._score()
+	level._score()
