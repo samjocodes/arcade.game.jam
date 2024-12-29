@@ -45,3 +45,4 @@ func _score():
 
 func _on_death_zone_deathzone() -> void:
 	game_over.show()
+	player.pause()
